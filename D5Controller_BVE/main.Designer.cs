@@ -42,7 +42,6 @@
             this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // timer1
             // 
@@ -59,15 +58,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             // 
-            // Form1
+            // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 271);
+            this.ClientSize = new System.Drawing.Size(272, 88);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "main";
+            this.Text = "D5Controller_BVE";
             this.ResumeLayout(false);
             this.PerformLayout();
 

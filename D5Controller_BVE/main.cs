@@ -25,9 +25,11 @@ namespace WindowsFormsApplication1
         public main()
         {
             InitializeComponent();
+
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void joystick_initilize()
         {
             //create joystick device. 
             foreach (
@@ -70,7 +72,6 @@ namespace WindowsFormsApplication1
             //Acquire devices for capturing. 
             joystick.Acquire(); 
         }
-
 
         private int get_mascon_state(int x, int b1)
         {
@@ -220,10 +221,18 @@ namespace WindowsFormsApplication1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            // デバイス未決定時は何もしない
+            // デバイス未決定時はinitilizeする
             if (joystick == null)
             {
-                return;
+                try
+                {
+                    joystick_initilize();
+                }
+                catch (Exception)
+                {
+                    label1.Text = "ジョイスティックを認識できませんでした";
+                    label2.Text = "";
+                }
             }
             
             try
@@ -278,7 +287,6 @@ namespace WindowsFormsApplication1
             }
             catch (Exception ex)
             {
-                //label1.AppendText(ex.Message + Environment.NewLine);
             }     
 
         }
